@@ -117,6 +117,8 @@ source ~/.zsh_profile
 alias ls='ls --color=auto'
 alias ll='ls --color=auto -lh'
 alias lll='ls --color=auto -lah'
+alias pip='python3 -m pip'
+alias python='python3'
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
