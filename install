@@ -1,7 +1,11 @@
-#!/usr/bin/env zsh
+#!/bin/zsh
 
-echo "Checking if 
-echo "\n"
+install_brew
+install_vscode
+install_python
+install_tmux
+Install_i3
+
 pushd $DOTFILES
 for folder in $(echo $STOW_FOLDERS | sed "s/,/ /g")
 do
@@ -10,6 +14,3 @@ do
     stow $folder
 done
 popd
-
-install_brew
-install_vscode

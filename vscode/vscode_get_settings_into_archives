@@ -1,4 +1,4 @@
-#!usr/bin/zsh
+#!/bin/zsh
 
 if [[ -z $DOTFILES ]]; then
     DOTFILES=$HOME/.dotfiles
@@ -9,4 +9,4 @@ mkdir $DOTFILES/vscode/archive
 
 cp ~/Library/Application\ Support/Code/User/settings.json ~/.dotfiles/vscode/archive/vscode_settings
 cp ~/Library/Application\ Support/Code/User/keybindings.json ~/.dotfiles/vscode/archive/vscode_keybindings
-cp ~/Library/Application\ Support/Code/User/snippets/` ~/.dotfiles/vscode/archive
+cp -r ~/Library/Application\ Support/Code/User/snippets/ ~/.dotfiles/vscode/archive

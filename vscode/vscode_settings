@@ -1,0 +1,17 @@
+{
+    "workbench.colorTheme": "Predawn",
+    "terminal.integrated.letterSpacing": 1,
+    "terminal.integrated.cursorStyle": "line",
+    "security.workspace.trust.untrustedFiles": "open",
+    // Controls the font size in pixels.
+    "editor.fontSize": 14,
+    "git.autofetch": true,
+    "jupyter.jupyterServerType": "local",
+    "python.defaultInterpreterPath": "/usr/local/bin/python3",
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "vim.visualModeKeyBindings": [],
+    "editor.accessibilitySupport": "off",
+    "editor.lineNumbers": "relative",
+}

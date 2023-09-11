@@ -1,5 +1,4 @@
 #!/bin/zsh
 
 cp ~/.dotfiles/vscode/vscode_settings ~/Library/Application\ Support/Code/User/settings.json
-cp ~/.dotfiles/vscode/vscode_keybindings ~/Library/Application\ Support/Code/User/keybindings.json
-cp ~/.dotfiles/vscode ~/Library/Application\ Support/Code/User/snippets/ 
+cp ~/.dotfiles/vscode/vscode_keybindings ~/Library/Application\ Support/Code/User/keybindings.jsons
