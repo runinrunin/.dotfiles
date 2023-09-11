@@ -1,0 +1,48 @@
+#!/bin/zsh
+if [[ -z $DOTFILES ]]; then
+    DOTFILES=$HOME/.dotfiles
+fi
+echo "DOTFILES contain $DOTFILES"
+
+BREWFILE=$DOTFILES/homebrew/Brewfile
+
+# Function to check if Homebrew is installed
+is_brew_installed() {
+  if command -v brew &>/dev/null; then
+    return 0  # Homebrew is installed
+  else
+    return 1  # Homebrew is not installed
+  fi
+}
+
+# Function to install Homebrew if it's not already installed
+install_brew() {
+  if ! is_brew_installed; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  else
+    echo "Homebrew is already installed."
+  fi
+}
+
+# Function to install extensions from a Brewfile
+install_extensions() {
+  
+
+  if [[ -e "$brewfile" ]]; then
+    echo "Installing extensions from $brewfile..."
+    brew bundle install --file="$brewfile"
+  else
+    echo "Brewfile not found. No extensions to install."
+  fi
+}
+
+# Check if Homebrew is installed and install it if necessary
+echo "\nLoocking for Homebrew.\n"
+echo "Checking if Brew is already installed."
+install_brew
+
+# Install extensions from the Brewfile
+echo "\nInstalling modules with brew."
+install_extensions
+
+echo "Brew script completed.\n"

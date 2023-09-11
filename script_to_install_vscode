@@ -1,0 +1,58 @@
+#!/bin/zsh
+
+# Function to check if VSCode is installed
+is_vscode_installed() {
+  if command -v code &>/dev/null; then
+    return 0  # VSCode is installed
+  else
+    return 1  # VSCode is not installed
+  fi
+}
+
+# Install VSCode if it's not already installed
+install_vscode() {
+  if ! is_vscode_installed; then
+    echo "\nVSCode is not installed. Installing..."
+    brew install --cask visual-studio-code
+    echo "VSCode has been installed.\n"
+  else
+    echo "VSCode is already installed.\n"
+  fi
+}
+
+# SCRIPT
+# Check if Homebrew is installed
+if command -v brew &>/dev/null; then
+    # Homebrew is installed, so install VSCode
+    echo "\nHomebrew is installed. Installing VSCode..."
+    install_vscode
+   else
+    # Homebrew is not installed
+    echo "\nHomebrew is not installed. Please install Homebrew to continue."
+fi
+
+if [[ -z $DOTFILES ]]; then
+    DOTFILES=$HOME/.dotfiles
+fi
+echo "DOTFILES contain $DOTFILES"
+DOTFILES=$DOTFILES
+
+echo "\nCopy current user vscode settings to archive..."
+$DOTFILES/vscode/vscode_get_settings_into_archive
+echo "\nInstalling new user settings..."
+$DOTFILES/vscode/vscode_set_user_settings
+
+echo "\nInstalling vscode extensions..."
+vscode_extensions_file=$DOTFILES/vscode/vscode_extensions
+if [ ! -f "$vscode_extensions_file" ]; then
+    echo "Extensions file '$vscode_extensions_file' not found."
+fi
+
+# Install extensions from the file
+while IFS= read -r extension; do
+    extension=$(echo "$extension" | tr -d '\r\n')  # Remove newline characters
+    echo "Installing $extension..."
+    code --install-extension "$extension"
+done < "$vscode_extensions_file"
+
+echo "Vscode scrit executed.\n"

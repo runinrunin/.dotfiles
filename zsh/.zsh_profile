@@ -1,0 +1,9 @@
+#!/usr/bin/env zsh
+
+export XDG_CONFIG_HOME=$HOME/.config
+
+export CC="clang-12"
+export CXX="clang++-12"
+
+export pypath = $HOME/personal/python_files
+export DOTFILES=$HOME/.dotfiles

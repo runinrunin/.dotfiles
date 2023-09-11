@@ -1,0 +1,15 @@
+#!/usr/bin/env zsh
+
+echo "Checking if 
+echo "\n"
+pushd $DOTFILES
+for folder in $(echo $STOW_FOLDERS | sed "s/,/ /g")
+do
+    echo "stow $folder"
+    stow -D $folder
+    stow $folder
+done
+popd
+
+install_brew
+install_vscode
