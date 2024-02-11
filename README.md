@@ -80,3 +80,10 @@ Lastly, I would install fuzzyfinder, tmux and  an i3 like for macos. For managin
 
 ## Afterthoughts
 It was a fun small project that took me 2h. I look at my working environment, and I though it was a mess. I delete everything, or nearly, and I reinstall decide that I should writte a script to install everything I need using only bash. It would be on github as a repos, but it should be installed before git CLI would be. I had some difficulties with vscode and the .plist file format for the defaults conf of macos. However, I think the vscode part is unique.
+
+## Ref
+Check [Theprimeagen dotfiles](https://github.com/ThePrimeagen/.dotfiles)! It is dotfiles for ubuntu (I think he uses uwuntu, a light version of ubuntu), but the ideas are the same. Only i3 is not available in macos. <br>
+
+I don't understand treesitter yet. I think it is for parsing language.<br>
+
+I don't mess with vim nor neovim yet...
