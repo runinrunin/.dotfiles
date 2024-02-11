@@ -13,3 +13,4 @@ python@3.11
 ripgrep
 stow
 tree
+zsh

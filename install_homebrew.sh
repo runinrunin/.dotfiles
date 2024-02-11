@@ -10,7 +10,4 @@ fi
 # Update Homebrew and run bundle to install dependencies
 brew doctor
 echo "Updating Homebrew and installing dependencies..."
-brew update && \
-  brew upgrade && \
-  brew tap homebrew/bundle && \
-  brew bundle --global
+brew update && brew upgrade 

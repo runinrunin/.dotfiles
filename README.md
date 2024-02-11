@@ -9,6 +9,10 @@ To install the dotfiles correctly, create a folder named .dotfiles in HOME, and 
 `mkdir ~/.dotfiles` <br>
 `cd ~/.dotfiles`
 
+Be sure that the terminal runs with zsh! <br>
+If it is not the case, change every `zsh` words by `bash` in the `install_brew.sh` file.
+If brew is install, you can run `brew install zsh`.
+
 ## Installing the dotfiles
 You can either clone the github repo using `<command to cloone the github repo> or you can download it directly from the github page as a zip folder and copy the files from it to the new ~/.dotfiles folder. <br>
 
@@ -34,4 +38,22 @@ If you have git CLI on your machine, you can immedialtly clone the repo and put 
  - install homebrew by executing `install_homebrew.sh`
  - run the command `xargs brew install < brew.txt`
 
-To install the repos with git clone run the following commands:
+To install the repos with git clone run the following commands in $HOME:
+`git clone https://github.com/runinrunin/.dotfiles.git` <br>
+`cd .dotfiles` <br>
+run the commands to install brew and brew packages <br>
+
+## Install VScode
+Download it from https://code.visualstudio.com/docs?dv=osx <br>
+According to the [offial doc](https://code.visualstudio.com/docs/setup/mac#:~:text=Keep%20in%20Dock.-,Launching%20from%20the%20command%20line,code'%20command%20in%20PATH%20command.), you can run vscode from the termnal after some changes: <br>
+ - Open vscode
+ - Open the Command Palette (Cmd+Shift+P) and type 'shell command' to find the Shell Command: Install 'code' command in PATH command.
+ - Restart the terminal for the new $PATH value to take effect. You'll be able to type 'code .' in any folder to start editing files in that folder.<br>
+
+### If you have sync your vscode settings
+just connect to you account on you local seccion...
+
+### Else 
+ Then, open `User setting (JSON)` with the Command Palette of vscode. Copy the content of `vscode_settings.json` in the local user settings of vscode.
+
+ Lastly, install the vscode extension using 
