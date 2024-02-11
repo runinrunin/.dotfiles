@@ -1,0 +1,26 @@
+{
+    "workbench.colorTheme": "Nord",
+    "terminal.integrated.letterSpacing": 1,
+    "terminal.integrated.cursorStyle": "line",
+    "security.workspace.trust.untrustedFiles": "open",
+    "editor.fontSize": 14,
+    "git.autofetch": true,
+    "jupyter.jupyterServerType": "local",
+    "[python]": {
+        "editor.formatOnType": true,
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
+    },
+    "isort.args":["--profile", "black"],
+    "python.languageServer": "Pylance",
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.diagnosticMode":"workspace",
+    "mypy.runUsingActiveInterpreter":true,
+    "vim.visualModeKeyBindings": [],
+    "editor.accessibilitySupport": "off",
+    "editor.lineNumbers": "relative",
+    "workbench.sideBar.location": "right"
+}
