@@ -57,3 +57,26 @@ just connect to you account on you local seccion...
  Then, open `User setting (JSON)` with the Command Palette of vscode. Copy the content of `vscode_settings.json` in the local user settings of vscode.
 
  Lastly, install the vscode extension using `install_vscode_extensions.sh` script. I wish I could just run `xargs code --install-extension < vscode_extensions.txt`, but it I suppose I should respect singular plurial...
+
+ Unfortunatly, this does not work for most extensions. I list the extensions with the command `code --list-extensions > vscode_extensions.txt` and replace every space by a newline. Then, my script is supposed to loop into every line of the file and run `code --install-extensions <$line>`. It does not work. <br>
+
+ The best solution for now is either to install the extensions manually (good enought, avoid to supercharge your machine), or to enable sync.
+
+ ## Setting .zshrc, .zshenv and changing the terminal profile
+ Install oh my zsh: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
+ Simlink the .zshrc and the .zhsenv files in .dotfile directory to home directory:<br>
+ 
+`ln -s ~/.dotfiles/.zshrc ~/`
+`ln -s ~/.dotfiles/.zshenv ~/`
+
+Finally, use `defaults import ~/.dotfiles/Gasp_terminalpreference.plist com.apple.Terminal` to import the terminal profiles. Then change the terminal profiles in terminal'preferences.
+
+## Futur work
+Eerything could be written in one .sh executable file. For now, the flow is controlled by human. Currently, every commands must be written in the terminal. If something block, or if a something is already installed/set, then it can be swiftly pass. Once again, this can be solved with if statement. The only blocking thing is the vscode part. <br>
+
+My goal was to make a comprehensible guideline, with few command and script to set my macos for work. I use only bash. Ic ould use ruby or lua, but it is overwork. Bash is just good enough for this task. For some part of the script, say installing brew package from the brew.txt, I wonder if gnu parralel would work.<br>
+
+Lastly, I would install fuzzyfinder, tmux and  an i3 like for macos. For managing the dotfile, gnu stow would be a must. i am not ready for vim yet... I also still have to organize everything with folders.
+
+## Afterthoughts
+It was a fun small project that took me 2h. I look at my working environment, and I though it was a mess. I delete everything, or nearly, and I reinstall decide that I should writte a script to install everything I need using only bash. It would be on github as a repos, but it should be installed before git CLI would be. I had some difficulties with vscode and the .plist file format for the defaults conf of macos. However, I think the vscode part is unique.
