@@ -1,4 +1,4 @@
-#! bin/zsh
+#! /bin/zsh
 
 while IFS= read -r line; 
     do  code --install-extension $line; 
